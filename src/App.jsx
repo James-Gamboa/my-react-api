@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/alt-text */
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./styles.css";
 
-const API_URL = "https://reqres.in/api/users?page=1&per_page=15";
+const Api = "https://reqres.in/api/users?page=1&per_page=15";
 
 const App = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(Api)
       .then((response) => response.json())
       .then((data) => setUsers(data.data))
       .catch((error) => console.error("Error fetching data:", error));
